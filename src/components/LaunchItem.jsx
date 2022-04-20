@@ -1,13 +1,15 @@
 import { HiCalendar } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import { Box, Flex, Text, Spacer, Tag, Button, Icon } from "@chakra-ui/react";
+import { Box, Flex, Text, Spacer, Tag, Button, Icon, useColorModeValue } from "@chakra-ui/react";
 
 import dayjs from "dayjs";
 import "dayjs/locale/es";
 
 export function LaunchItem(launch) {
+  const boxColor = useColorModeValue("gray.100", "gray.600");
+
   return (
-    <Box bg="gray.100" p={4} m={4} borderRadius="lg">
+    <Box bg={boxColor} p={4} m={4} borderRadius="lg">
       <Flex>
         <Text fontSize="2xl">
           Mission <strong>{launch.mission_name}</strong> ({launch.launch_year})
