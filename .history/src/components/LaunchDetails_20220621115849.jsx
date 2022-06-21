@@ -14,7 +14,7 @@ export function LaunchDetails() {
   return (
     <Box bg="gray.100" p={4} m={4} borderRadius="lg">
       {!launch ? (
-        <Box fontSize='3xl' align="center" alignItems="center">Loading...</Box>
+        <div>Loading...</div>
       ) : (
         <>
           <Link to="/">
