@@ -14,14 +14,14 @@ export function LaunchDetails() {
   return (
     <Box bg="gray.100" p={4} m={4} borderRadius="lg">
       {!launch ? (
-        <Box fontSize='3xl' align="center" alignItems="center">Loading...</Box>
+        <div>Loading...</div>
       ) : (
         <>
-          <Link to="/">
-            <Button mb={8} colorScheme="purple">
-              All Launches
-            </Button>
-          </Link>
+        <Link to={`/launch/${launch.flight_number}`}>
+        <Button m={6} colorScheme="purple">
+          More Details
+        </Button>
+      </Link>
           <Flex>
             <Text fontSize="2xl">
               Mission <strong>{launch.mission_name}</strong> (
@@ -33,9 +33,8 @@ export function LaunchDetails() {
             </Tag>
           </Flex>
           <Box>
-            Rocket:{" "}
-            <Link to={`/rockets/${launch.rocket?.rocket_id}`}>
-              {launch.rocket?.rocket_name}
+            <Link to="/">
+              All Launches
             </Link>
           </Box>
         </>

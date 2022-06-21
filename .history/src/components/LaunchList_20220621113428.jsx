@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Heading, Text, Flex, Box, Input } from "@chakra-ui/react";
+import { Heading, Image } from "@chakra-ui/react";
 
 import { LaunchItem } from "./LaunchItem";
 import * as API from "../services/launches";
@@ -22,26 +22,21 @@ export function LaunchList() {
         SpaceX Launches
       </Heading>
 
-      <Text fontSize='3xl' ml="7">
-        Search:
-      </Text>
-      <Flex align="center">
-        <Input
-          m={6}
-          variant='filled' type="text"
-          placeholder="Search mission name..."
-          onChange={(e) => filter(e.target.value)} />
-      </Flex>
+      <input
+        type="text"
+        placeholder="Search mission name..."
+        onChange={(e) => filter(e.target.value)}
+      />
 
       {launches.length === 0 ? (
-        <Box fontSize='3xl' align="center" alignItems="center">Loading...</Box>
+        <div>Loading...</div>
       ) : (
         <section>
           {
             launches.map((launch, flight_number) => {
               if (launch.mission_name.toLowerCase().includes(search.toLowerCase())) {
                 return (
-                  <LaunchItem key={flight_number} launch={launch} />
+                  <LaunchItem key={launch.flight_number} launch={launch} />
                 )
               }
             })

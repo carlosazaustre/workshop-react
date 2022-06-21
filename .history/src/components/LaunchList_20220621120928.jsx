@@ -22,7 +22,7 @@ export function LaunchList() {
         SpaceX Launches
       </Heading>
 
-      <Text fontSize='3xl' ml="7">
+      <Text fontSize='2xl' ml="7">
         Search:
       </Text>
       <Flex align="center">

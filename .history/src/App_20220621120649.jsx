@@ -9,7 +9,7 @@ import logo from "./assets/logo-spacex.png";
 export function App() {
   return (
     <>
-      <Image ml={4} src={logo} width={300} />
+      <Image align="center" ml={4} src={logo} width={300} />
       <Routes>
         <Route path="/" element={<LaunchList />} />
         <Route path="launch/:launchId" element={<LaunchDetails />} />

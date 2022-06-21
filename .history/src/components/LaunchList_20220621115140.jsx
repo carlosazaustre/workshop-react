@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Heading, Text, Flex, Box, Input } from "@chakra-ui/react";
+import { Heading, Flex, Stack, Input } from "@chakra-ui/react";
 
 import { LaunchItem } from "./LaunchItem";
 import * as API from "../services/launches";
@@ -22,9 +22,6 @@ export function LaunchList() {
         SpaceX Launches
       </Heading>
 
-      <Text fontSize='3xl' ml="7">
-        Search:
-      </Text>
       <Flex align="center">
         <Input
           m={6}
@@ -33,8 +30,12 @@ export function LaunchList() {
           onChange={(e) => filter(e.target.value)} />
       </Flex>
 
+      <input
+
+      />
+
       {launches.length === 0 ? (
-        <Box fontSize='3xl' align="center" alignItems="center">Loading...</Box>
+        <div>Loading...</div>
       ) : (
         <section>
           {
